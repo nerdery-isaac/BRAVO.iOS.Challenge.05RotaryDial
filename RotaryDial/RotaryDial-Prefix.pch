@@ -14,3 +14,10 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+// Define DLOG to log to NSLog when DEBUG is defined
+#ifdef DEBUG
+    #define DLOG(...) NSLog(@"%s:%d %@", __PRETTY_FUNCTION__, __LINE__, [NSString stringWithFormat:__VA_ARGS__])
+#else
+    #define DLOG(...) do {} while (NO)
+#endif
