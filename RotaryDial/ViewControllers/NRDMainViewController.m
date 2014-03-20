@@ -10,7 +10,7 @@
 
 @interface NRDMainViewController ()
 
-@property (nonatomic, assign) NSInteger dialValue;
+@property (nonatomic, assign) double dialValue;
 @property (nonatomic, assign) CGPoint initialHandlePoint;
 
 @property (nonatomic, weak) IBOutlet UIView *dialContainerView;
@@ -23,8 +23,8 @@
 @end
 
 
-static NSUInteger const kTotalSteps = 60;
-static NSUInteger const kTapSnapSize = kTotalSteps / 12;
+static double const kTotalSteps = 60.0f;
+static double const kTapSnapSize = kTotalSteps / 12;
 static CGFloat const kRotationPerStep = 2.0 * M_PI / kTotalSteps;
 
 
@@ -39,22 +39,22 @@ static CGFloat const kRotationPerStep = 2.0 * M_PI / kTotalSteps;
 
 #pragma mark - Overridden setters/getters
 
-- (void)setDialValue:(NSInteger)dialValue
+- (void)setDialValue:(double)dialValue
 {
     if (_dialValue != dialValue) {
-        _dialValue = dialValue % kTotalSteps;
-        if (_dialValue == 0) {
-            _dialValue = kTotalSteps;
+        _dialValue = fmod(dialValue, kTotalSteps);
+        while (_dialValue < 0.0) {
+            _dialValue += kTotalSteps;
         }
-        self.dialValueLabel.text = [NSString stringWithFormat:@"%d", self.dialValue];
+        self.dialValueLabel.text = [NSString stringWithFormat:@"%.0f", fmod(roundf(self.dialValue), kTotalSteps)];
     }
 }
 
 #pragma mark - helpers
 
-- (void)adjustDialBy:(NSInteger)steps
+- (void)adjustDialBy:(double)change
 {
-    self.dialValue += steps;
+    self.dialValue += change;
     self.dialContainerView.transform = CGAffineTransformMakeRotation(kRotationPerStep * self.dialValue);
 }
 
@@ -62,19 +62,19 @@ static CGFloat const kRotationPerStep = 2.0 * M_PI / kTotalSteps;
 
 - (IBAction)leftHalfTapped:(UITapGestureRecognizer *)sender
 {
-    if (self.dialValue % kTapSnapSize == 0) {
+    if (fmod(self.dialValue, kTapSnapSize) <= 0.01) {
         // We're already snapped to a snap-value, so subtract a whole snap interval.
         [self adjustDialBy:-kTapSnapSize];
     } else {
         // Otherwise, adjust by the remainder.
-        [self adjustDialBy:-(self.dialValue % kTapSnapSize)];
+        [self adjustDialBy:-fmod(self.dialValue, kTapSnapSize)];
     }
 }
 
 - (IBAction)rightHalfTapped:(UITapGestureRecognizer *)sender
 {
     // Adjust by a whole snap interval, less however far off a snap interval we already are.
-    [self adjustDialBy:kTapSnapSize - (self.dialValue % kTapSnapSize)];
+    [self adjustDialBy:kTapSnapSize - fmod(self.dialValue, kTapSnapSize)];
 }
 
 - (IBAction)handlePanned:(UIPanGestureRecognizer *)sender
@@ -87,7 +87,7 @@ static CGFloat const kRotationPerStep = 2.0 * M_PI / kTotalSteps;
     CGPoint center = self.dialContainerView.center;
     CGFloat deltaAngle = (atan2(newHandlePoint.y - center.y, newHandlePoint.x - center.x)
                           - atan2(self.initialHandlePoint.y - center.y, self.initialHandlePoint.x - center.x));
-    [self adjustDialBy:round(deltaAngle / kRotationPerStep)];
+    [self adjustDialBy:(deltaAngle / kRotationPerStep)];
 }
 
 @end
