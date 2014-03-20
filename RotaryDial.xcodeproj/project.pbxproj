@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2830E39D18DA5F820024CF77 /* NRDImageViewIgnoringTransparentTouches.m in Sources */ = {isa = PBXBuildFile; fileRef = 2830E39C18DA5F820024CF77 /* NRDImageViewIgnoringTransparentTouches.m */; };
 		5802B43418C10FFB0017B151 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5802B43318C10FFB0017B151 /* Foundation.framework */; };
 		5802B43618C10FFB0017B151 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5802B43518C10FFB0017B151 /* CoreGraphics.framework */; };
 		5802B43818C10FFB0017B151 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5802B43718C10FFB0017B151 /* UIKit.framework */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2830E39B18DA5F820024CF77 /* NRDImageViewIgnoringTransparentTouches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRDImageViewIgnoringTransparentTouches.h; sourceTree = "<group>"; };
+		2830E39C18DA5F820024CF77 /* NRDImageViewIgnoringTransparentTouches.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRDImageViewIgnoringTransparentTouches.m; sourceTree = "<group>"; };
 		5802B43018C10FFB0017B151 /* RotaryDial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RotaryDial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5802B43318C10FFB0017B151 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5802B43518C10FFB0017B151 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -203,6 +206,8 @@
 		CFC6577CC671420791EBB2CD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2830E39B18DA5F820024CF77 /* NRDImageViewIgnoringTransparentTouches.h */,
+				2830E39C18DA5F820024CF77 /* NRDImageViewIgnoringTransparentTouches.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 			files = (
 				5802B44018C10FFB0017B151 /* main.m in Sources */,
 				5802B44418C10FFB0017B151 /* NRDAppDelegate.m in Sources */,
+				2830E39D18DA5F820024CF77 /* NRDImageViewIgnoringTransparentTouches.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
