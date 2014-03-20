@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2830E39818DA5D860024CF77 /* NRDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2830E39618DA5D860024CF77 /* NRDMainViewController.m */; };
+		2830E39918DA5D860024CF77 /* NRDMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2830E39718DA5D860024CF77 /* NRDMainViewController.xib */; };
 		2830E39D18DA5F820024CF77 /* NRDImageViewIgnoringTransparentTouches.m in Sources */ = {isa = PBXBuildFile; fileRef = 2830E39C18DA5F820024CF77 /* NRDImageViewIgnoringTransparentTouches.m */; };
 		5802B43418C10FFB0017B151 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5802B43318C10FFB0017B151 /* Foundation.framework */; };
 		5802B43618C10FFB0017B151 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5802B43518C10FFB0017B151 /* CoreGraphics.framework */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2830E39518DA5D860024CF77 /* NRDMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRDMainViewController.h; sourceTree = "<group>"; };
+		2830E39618DA5D860024CF77 /* NRDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRDMainViewController.m; sourceTree = "<group>"; };
+		2830E39718DA5D860024CF77 /* NRDMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NRDMainViewController.xib; sourceTree = "<group>"; };
 		2830E39B18DA5F820024CF77 /* NRDImageViewIgnoringTransparentTouches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRDImageViewIgnoringTransparentTouches.h; sourceTree = "<group>"; };
 		2830E39C18DA5F820024CF77 /* NRDImageViewIgnoringTransparentTouches.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRDImageViewIgnoringTransparentTouches.m; sourceTree = "<group>"; };
 		5802B43018C10FFB0017B151 /* RotaryDial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RotaryDial.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +204,9 @@
 		C39E31E3426C4D8F8945D5A6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2830E39518DA5D860024CF77 /* NRDMainViewController.h */,
+				2830E39618DA5D860024CF77 /* NRDMainViewController.m */,
+				2830E39718DA5D860024CF77 /* NRDMainViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -299,6 +307,7 @@
 			files = (
 				5802B43E18C10FFB0017B151 /* InfoPlist.strings in Resources */,
 				5802B44618C10FFB0017B151 /* Images.xcassets in Resources */,
+				2830E39918DA5D860024CF77 /* NRDMainViewController.xib in Resources */,
 				7DE819F8B3AC4C0184EEDD11 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2830E39818DA5D860024CF77 /* NRDMainViewController.m in Sources */,
 				5802B44018C10FFB0017B151 /* main.m in Sources */,
 				5802B44418C10FFB0017B151 /* NRDAppDelegate.m in Sources */,
 				2830E39D18DA5F820024CF77 /* NRDImageViewIgnoringTransparentTouches.m in Sources */,

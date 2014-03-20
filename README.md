@@ -2,7 +2,7 @@ This is the next challenge of a new series of activities. The goal of this serie
 
 The requirements for the challenge are as follows:
 
- 1. Create a dial. The dial represents a value between 1 and 100.
+ 1. Create a dial. The dial represents a value between 1 and 60.
  2. The dial should include a drag handle. When a user drags the the drag handle the dial should orient to track the user's dragging gesture. Only when the user drags on the drag handle should the dial turn.
  3. The dial should also include two touchable regions. If you touch the region, counter-clockwise from handle the dial should orient itself to the nearest step on the circle that is a whole 12th of the circle in that direction. For example, if the dial were to be imagined as a clock and the minute hand was on 37 minutes after the hour, tapping that region would move the minute hand to 35 minutes after the hour. Touching it again at that point would move it to 30 minutes after the hour.
  4. Touching the region clockwise from the handle moves the dial in a similar fashion, but in the clockwise direction.
